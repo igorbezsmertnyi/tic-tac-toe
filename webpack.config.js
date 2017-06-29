@@ -4,7 +4,7 @@ const config = {
   context: __dirname + '/src',
   entry: ['./index.js', './style.scss'],
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/docs/assets',
     filename: 'bundle.js',
     publicPath: "assets/",
   },
