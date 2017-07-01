@@ -18,6 +18,106 @@ figure {
   margin: 0;
 }
 
+.header {
+  position: absolute;
+  width: 100vw;
+  height: 126px;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+
+  &__move-container {
+    width: 450px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    &--x,
+    &--o {
+      position: relative;
+      width: 50%;
+      height: 72px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    &--x {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 100%;
+        background-color: darken(#2CC990, 10%);
+        top: 0;
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          background-color: darken(#2CC990, 20%);
+        }
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &--active {
+        &::before,
+        &::after {
+          background-color: #E01931;
+        }
+
+        &:hover {
+          &::before,
+          &::after {
+            background-color: darken(#E01931, 10%);
+          }
+        }
+      }
+    }
+
+    &--o {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 12px solid darken(#2CC990, 10%);
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      &:hover {
+        &::before {
+          border-color: darken(#2CC990, 20%);
+        }
+      }
+
+      &--active {
+        &::before {
+          border: 12px solid #fff;
+        }
+
+        &:hover {
+          &::before {
+            border-color: darken(#fff, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
 .c-0 {
   border-right: 2px solid darken(#2CC990, 10%);
   border-bottom: 2px solid darken(#2CC990, 10%);
@@ -67,10 +167,20 @@ figure {
 }
 
 .sec-c {
-  width: 450px;
-  height: 450px;
+  width: 310px;
+  height: 310px;
   display: flex;
   flex-flow: row wrap;
+
+  @media(min-width: 321px) {
+    width: 365px;
+    height: 365px;
+  }
+
+  @media(min-width: 376px) {
+    width: 450px;
+    height: 450px;
+  }
 
   &__item {
     position: relative;
@@ -115,5 +225,92 @@ figure {
       bottom: 0;
       margin: auto;
     }
+  }
+}
+
+.win-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  transform: scale(0);
+
+  &--active {
+    display: block;
+    animation: win-active-animation 0.2s 1 ease-in-out;
+    transform: scale(1);
+  }
+
+  &--disactive {
+    animation: win-disactive-animation 0.2s 1 ease-in-out;
+    transform: scale(0);
+  }
+
+  &__pad {
+    background-color: #1DABB8;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &--x,
+    &--o,
+    &--draw {
+      &::before {
+        position: absolute;
+        width: 100%;
+        height: 58px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        font-family: Helvetica, Arial;
+        font-weight: bold;
+        font-size: 58px;
+        color: #fff;
+      }
+    }
+
+    &--x {
+      &::before {
+        content: 'X - WON!';
+      }
+    }
+
+    &--o {
+      &::before {
+        content: 'O - WON!';
+      }
+    }
+
+    &--draw {
+      &::before {
+        content: 'DRAW';
+      }
+    }
+  }
+}
+
+@keyframes win-active-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes win-disactive-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }

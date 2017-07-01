@@ -1,44 +1,52 @@
 <!doctype html>
-<html amp lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
     <link rel="canonical" href="hello-world.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     <main>
+      <heder class="header">
+        <div class="header__move-container">
+          <div id="selectX" class="header__move-container--x"></div>
+          <div id="selectO" class="header__move-container--o"></div>
+        </div>
+      </heder>
       <section class="sec-c">
-        <div id="с-0" class="sec-c__item c-0">
+        <div id="c-0" class="sec-c__item c-0">
 
         </div>
-        <div id="с-1" class="sec-c__item c-1">
+        <div id="c-1" class="sec-c__item c-1">
 
         </div>
-        <div id="с-2" class="sec-c__item c-2">
+        <div id="c-2" class="sec-c__item c-2">
 
         </div>
-        <div id="с-3" class="sec-c__item c-3">
+        <div id="c-3" class="sec-c__item c-3">
 
         </div>
-        <div id="с-4" class="sec-c__item c-4">
+        <div id="c-4" class="sec-c__item c-4">
 
         </div>
-        <div id="с-5" class="sec-c__item c-5">
+        <div id="c-5" class="sec-c__item c-5">
 
         </div>
-        <div id="с-6" class="sec-c__item c-6">
+        <div id="c-6" class="sec-c__item c-6">
 
         </div>
-        <div id="с-7" class="sec-c__item c-7">
+        <div id="c-7" class="sec-c__item c-7">
 
         </div>
-        <div id="с-8" class="sec-c__item c-8">
+        <div id="c-8" class="sec-c__item c-8">
 
         </div>
       </section>
+      <div id="winModal" class="win-modal">
+        <div class="win-modal__pad"></div>
+        <div id="winContent" class="win-modal__content"></div>
+      </div>
     </main>
     <script src="assets/bundle.js"></script>
   </body>
