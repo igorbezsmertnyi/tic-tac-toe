@@ -123,6 +123,9 @@ class TicTacToe {
       case 2:
         oneUser = false
         break
+      case 3:
+        this.reset()
+        break
     }
 
     this.reset()
