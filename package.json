@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --public 192.168.0.227:3000"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "url-loader": "^0.5.9"
   },
   "devDependencies": {
-    "webpack": "^3.0.0"
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
   }
 }

@@ -37,6 +37,7 @@ const config = {
     contentBase: __dirname + '/src',
     open: true,
     port: 3000,
+    host: '0.0.0.0'
   },
   resolveLoader: {
     moduleExtensions: ['-loader']
